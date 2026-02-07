@@ -722,8 +722,8 @@ def main():
                 'headline': 'Ship campaigns while you sleep',
                 'subheadline': 'Early access available. Limited spots.',
                 'cta': 'Join the Waitlist',
-                'contact': 'hello@antigravityhtkit.ai',
-                'website': 'antigravityhtkit.ai'
+                'contact': 'hello@yourdomain.com',
+                'website': 'yourdomain.com'
             }
         ]
 

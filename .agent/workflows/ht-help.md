@@ -20,6 +20,28 @@ description: ⚡ Kit usage guide
 ## Documentation
 
 - Rules: `.agent/rules/`
-- Skills: `.agent/skills/` (25 skills with real scripts)
+- Skills: `.agent/skills/` (59 skills)
 - Docs format: `docs/XX-Type-Name-YYYY-MM-DD.md`
 - Features: `features/feature-name/` (per-feature details)
+
+## Configuration
+
+- Kit config: `.agent/.ht.json`
+- Project config: `.agent/config.json`
+- Metadata: `.agent/metadata.json`
+
+## Scripts
+
+```bash
+# Check version
+bash .agent/scripts/ht-version.sh show
+
+# Get help
+python3 .agent/scripts/ht-help.py
+
+# Help on specific workflow
+python3 .agent/scripts/ht-help.py fix
+
+# Search skills
+python3 .agent/scripts/ht-help.py auth
+```

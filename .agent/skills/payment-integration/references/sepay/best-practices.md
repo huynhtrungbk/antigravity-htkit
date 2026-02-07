@@ -740,7 +740,7 @@ export function generateSepayInvoice(order: Order, transaction: TransactionInfo)
         </table>
 
         <p>Thank you for your purchase!</p>
-        <p>Support: support@antigravityhtkit.com</p>
+        <p>Support: support@yourdomain.com</p>
       </div>
     </body>
     </html>

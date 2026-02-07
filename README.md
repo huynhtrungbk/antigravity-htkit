@@ -6,7 +6,7 @@
 
 ## Overview
 
-**Antigravity-HTKit** v1.0.0 — comprehensive AI agent toolkit combining Engineering, Marketing, Design, DevOps, SEO, Payment, and AI/Media capabilities.
+**Antigravity-HTKit** v1.1.0 — comprehensive AI agent toolkit combining Engineering, Marketing, Design, DevOps, SEO, Payment, and AI/Media capabilities.
 
 ## Skills (59)
 
@@ -21,6 +21,21 @@
 | **Marketing** | 14 | Ads, email, social, pricing, launch |
 | **Meta** | 4 | Context, thinking, MCP, kanban |
 
+## Workflows (11)
+
+| Command | Description |
+|---------|-------------|
+| `/ask` | ⚡ Answer technical questions |
+| `/bootstrap` | ⚡⚡⚡ Bootstrap new project |
+| `/debug` | ⚡⚡ Debug without auto-fixing |
+| `/deploy` | ⚡⚡⚡ Deploy to production |
+| `/fix` | ⚡⚡ Analyze and fix issues |
+| `/plan` | ⚡⚡⚡ Create implementation plan |
+| `/status` | ⚡ Project status overview |
+| `/test` | ⚡ Run tests and analyze |
+| `/vn` | ⚡⚡ Vietnamese workflow |
+| `/watzup` | ⚡ Review recent changes |
+
 ## Quick Start
 
 ```bash
@@ -33,6 +48,9 @@ bash .agent/scripts/ht-version.sh show
 
 # Get help
 python3 .agent/scripts/ht-help.py
+
+# Help on specific workflow
+python3 .agent/scripts/ht-help.py fix
 ```
 
 ## Configuration
@@ -44,6 +62,10 @@ Edit `.agent/.ht.json` for preferences:
   "preferences": {
     "language": "vi",
     "timezone": "Asia/Ho_Chi_Minh"
+  },
+  "defaults": {
+    "codingLevel": 3,
+    "commitPrefix": "ht"
   }
 }
 ```

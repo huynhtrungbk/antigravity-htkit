@@ -1,16 +1,17 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.1",
   "name": "antigravity-htkit",
   "description": "Full AI development & marketing toolkit with 59 skills. Engineering, Marketing, Design, DevOps, SEO, Payment, and AI/Media capabilities.",
   "author": "huynhtrungbk",
-  "buildDate": "2026-02-07T21:00:00.000Z",
+  "buildDate": "2026-02-07T15:02:49.000Z",
   "repository": {
     "type": "git",
     "url": "https://github.com/huynhtrungbk/antigravity-htkit.git"
   },
   "stats": {
     "skills": 59,
+    "workflows": 11,
     "categories": 8,
-    "scripts": 50
+    "scripts": 15
   }
 }

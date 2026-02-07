@@ -117,37 +117,15 @@ python ~/.agent/scripts/resolve_env.py TEST_VAR --verbose
 python ~/.agent/scripts/resolve_env.py GEMINI_API_KEY --skill ai-multimodal --find-all
 ```
 
-## generate_catalogs.py
+## Other Scripts
 
-Generate YAML catalogs from command and skill data files. Outputs to stdout by default for easy consumption by the agent.
+| Script | Description |
+|--------|-------------|
+| `ht-help.py` | Help system with fuzzy matching and intent detection |
+| `ht-version.sh` | Version manager (show/bump/changelog) |
+| `validate-docs.cjs` | Documentation accuracy validator |
+| `worktree.cjs` | Git worktree manager |
+| `scan_skills.py` | Skill metadata scanner |
+| `fix-shebang-permissions.sh` | Fix file permissions based on shebang |
+| `win_compat.py` | Windows UTF-8 compatibility |
 
-### Usage
-
-```bash
-# Generate skills catalog (outputs to stdout)
-python .agent/scripts/generate_catalogs.py --skills
-
-# Generate commands catalog (outputs to stdout)
-python .agent/scripts/generate_catalogs.py --commands
-
-# Generate both catalogs (outputs to stdout)
-python .agent/scripts/generate_catalogs.py
-
-# Write to file instead of stdout
-python .agent/scripts/generate_catalogs.py --skills --output guide/SKILLS.yaml
-
-# View help
-python .agent/scripts/generate_catalogs.py --help
-```
-
-### Input Files
-
-Located in the same directory as the script:
-- `commands_data.yaml` - Source data for commands
-- `skills_data.yaml` - Source data for skills
-
-### Output
-
-By default, outputs YAML to stdout. Use `--output PATH` to write to a file instead.
-
-**Note:** The script can be run from any directory - it resolves input files relative to the script location.

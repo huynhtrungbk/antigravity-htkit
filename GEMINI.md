@@ -6,7 +6,7 @@ This file provides guidance to Antigravity when working with code in this reposi
 
 ## Overview
 
-**Antigravity-HTKit** v1.0.0 — Full AI development & marketing toolkit with 59 skills. By [@huynhtrungbk](https://github.com/huynhtrungbk).
+**Antigravity-HTKit** v1.1.1 — Full AI development & marketing toolkit with 59 skills. By [@huynhtrungbk](https://github.com/huynhtrungbk).
 
 ---
 

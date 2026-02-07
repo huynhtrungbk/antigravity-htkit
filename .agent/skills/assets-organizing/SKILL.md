@@ -110,7 +110,7 @@ Load: `references/asset-types.md`
 
 ## Date Format
 
-Use `$CK_PLAN_DATE_FORMAT` env var or default to `YYMMDD-HHmm`.
+Use `$HT_PLAN_DATE_FORMAT` env var or default to `YYMMDD-HHmm`.
 
 ```bash
 # PowerShell

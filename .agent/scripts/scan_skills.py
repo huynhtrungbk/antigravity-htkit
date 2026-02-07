@@ -6,7 +6,11 @@ Scan .agent/skills directory and extract skill metadata.
 import re
 from pathlib import Path
 from typing import Dict, List
-import yaml
+try:
+    import yaml
+    HAS_YAML = True
+except ImportError:
+    HAS_YAML = False
 
 def extract_frontmatter(content: str) -> Dict:
     """Extract YAML frontmatter from markdown content."""
@@ -120,7 +124,7 @@ def categorize_skill(name: str, description: str, content: str) -> str:
         return 'multimedia'
 
     # Frameworks
-    if any(x in lower_name for x in ['web-frameworks', 'mobile', 'shopify']):
+    if any(x in lower_name for x in ['web-frameworks', 'remotion']):
         return 'frameworks'
 
     # Utilities
@@ -179,7 +183,12 @@ def main():
 
     # Output YAML for processing (generate_catalogs.py reads YAML)
     output_path = Path('.agent/scripts/skills_data.yaml')
-    output_path.write_text(yaml.dump(skills, allow_unicode=True, default_flow_style=False))
+    if HAS_YAML:
+        output_path.write_text(yaml.dump(skills, allow_unicode=True, default_flow_style=False))
+    else:
+        import json
+        output_path = Path('.agent/scripts/skills_data.json')
+        output_path.write_text(json.dumps(skills, ensure_ascii=False, indent=2))
     print(f"\n✓ Saved metadata to {output_path}")
 
 if __name__ == '__main__':

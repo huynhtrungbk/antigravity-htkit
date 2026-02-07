@@ -1,7 +1,7 @@
 {
     "kit": {
         "name": "Antigravity-HTKit",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "author": "huynhtrungbk"
     },
     "preferences": {
@@ -14,11 +14,25 @@
         "commitPrefix": "ht",
         "docNumbering": true,
         "docFolder": "./docs/",
-        "featuresFolder": "./features/"
+        "featuresFolder": "./features/",
+        "codingLevel": 3
     },
     "identity": {
         "admin": "huynhtrungbk",
         "email": "admin@huynhtrungbk.com",
         "github": "https://github.com/huynhtrungbk"
+    },
+    "project": {
+        "type": "auto",
+        "packageManager": "auto",
+        "framework": "auto"
+    },
+    "gemini": {
+        "model": "gemini-3.0-flash"
+    },
+    "skills": {
+        "research": {
+            "useGemini": true
+        }
     }
 }

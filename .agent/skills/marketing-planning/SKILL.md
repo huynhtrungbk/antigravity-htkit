@@ -93,14 +93,14 @@ Check the `## Plan Context` section injected by hooks:
 1. **If "Plan:" shows a path**: Ask "Continue with existing plan? [Y/n]"
 2. **If "Suggested:" shows a path**: Inform user, ask if they want to activate or create new
 3. **If "Plan: none"**: Create new plan using naming from `## Naming` section
-4. **Update on create**: Run `node .agent/scripts/set-active-plan.cjs {plan-dir}`
+4. **Update plan context**: Document active plan in `docs/` for reference
 
 ### Report Output Location
 
 All agents writing reports MUST:
 1. Check `Plan Context` section injected by hooks for `Reports Path`
-2. Only `$CK_ACTIVE_PLAN` plans use plan-specific reports path
-3. `$CK_SUGGESTED_PLAN` plans use default `plans/reports/` (not plan folder)
+2. Only `$HT_ACTIVE_PLAN` plans use plan-specific reports path
+3. `$HT_SUGGESTED_PLAN` plans use default `plans/reports/` (not plan folder)
 4. Use naming: `{date}-{agent}-{slug}.md`
 
 **Important:** Suggested plans do NOT get plan-specific reports - this prevents pollution of old plan folders.

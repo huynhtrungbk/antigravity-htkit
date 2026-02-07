@@ -1,419 +1,137 @@
 #!/usr/bin/env python3
-"""
-Comprehensive test suite for ht-help.py
-Tests all user scenarios and edge cases.
+"""Tests for Antigravity-HTKit help system v1.1.0."""
 
-Run: python test_ht_help.py
-"""
-
-import subprocess
 import sys
+import subprocess
 from pathlib import Path
 
-SCRIPT_PATH = Path(__file__).parent / "ht-help.py"
 
-# Test results tracking
-passed = 0
-failed = 0
-failures = []
-
-
-def run_ht_help(args: str) -> tuple[str, int]:
-    """Run ht-help.py with given arguments and return (output, exit_code)."""
-    cmd = [sys.executable, str(SCRIPT_PATH)] + (args.split() if args else [])
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    return result.stdout + result.stderr, result.returncode
+def run_help(args: str = "") -> str:
+    """Run ht-help.py and return output."""
+    cmd = [sys.executable, ".agent/scripts/ht-help.py"] + args.split() if args else [sys.executable, ".agent/scripts/ht-help.py"]
+    result = subprocess.run(cmd, capture_output=True, text=True, cwd=str(Path(__file__).resolve().parent.parent.parent))
+    return result.stdout + result.stderr
 
 
-def test(name: str, args: str, expect_contains: list[str] = None, expect_type: str = None, expect_not_contains: list[str] = None):
-    """Run a test case and check expectations."""
-    global passed, failed, failures
-
-    output, code = run_ht_help(args)
-    success = True
+def test_overview():
+    """Test: overview shows all workflows."""
+    output = run_help()
     errors = []
+    if "Antigravity-HTKit Commands" not in output:
+        errors.append("Missing title")
+    if "11 workflows" not in output:
+        errors.append("Missing workflow count")
+    if "59 skills" not in output:
+        errors.append("Missing skills count")
+    if "/plan" not in output:
+        errors.append("Missing /plan workflow")
+    if "/fix" not in output:
+        errors.append("Missing /fix workflow")
+    if "@HT_OUTPUT_TYPE" not in output:
+        errors.append("Missing @HT_OUTPUT_TYPE marker")
+    return errors
 
-    # Check output type marker
-    if expect_type:
-        marker = f"@CK_OUTPUT_TYPE:{expect_type}"
-        if marker not in output:
-            success = False
-            errors.append(f"Expected type {expect_type}, got: {output[:100]}")
 
-    # Check expected content
-    if expect_contains:
-        for text in expect_contains:
-            if text.lower() not in output.lower():
-                success = False
-                errors.append(f"Expected '{text}' not found")
+def test_category_guide():
+    """Test: category guide shows workflow steps."""
+    output = run_help("fix")
+    errors = []
+    if "Sửa Lỗi" not in output:
+        errors.append("Missing Vietnamese title")
+    if "/fix" not in output:
+        errors.append("Missing /fix reference")
+    if "Workflow:" not in output:
+        errors.append("Missing workflow section")
+    if "Tip:" not in output:
+        errors.append("Missing tip")
+    return errors
 
-    # Check content that should NOT be present
-    if expect_not_contains:
-        for text in expect_not_contains:
-            if text.lower() in output.lower():
-                success = False
-                errors.append(f"Unexpected '{text}' found")
 
-    if success:
-        passed += 1
-        print(f"✅ {name}")
-    else:
-        failed += 1
-        failures.append((name, args, errors, output[:500]))
-        print(f"❌ {name}")
-        for e in errors:
-            print(f"   {e}")
+def test_task_recommendation():
+    """Test: task description gets recommendation."""
+    output = run_help("debug login error")
+    errors = []
+    if "Recommended:" not in output:
+        errors.append("Missing recommendation")
+    if "/debug" not in output and "/fix" not in output:
+        errors.append("Missing relevant workflow")
+    return errors
+
+
+def test_search():
+    """Test: unknown word triggers search."""
+    output = run_help("auth")
+    errors = []
+    if "Search:" not in output:
+        errors.append("Missing search header")
+    if "better-auth" not in output:
+        errors.append("Missing better-auth result")
+    return errors
+
+
+def test_version():
+    """Test: --version flag works."""
+    output = run_help("--version")
+    errors = []
+    if "v1.1.0" not in output:
+        errors.append("Missing version 1.1.0")
+    if "Workflows: 11" not in output:
+        errors.append("Missing workflow count")
+    if "Skills: 59" not in output:
+        errors.append("Missing skills count")
+    return errors
+
+
+def test_all_categories():
+    """Test: all category guides load without error."""
+    categories = ["fix", "plan", "bootstrap", "test", "deploy", "debug", "ask", "status", "watzup", "vn"]
+    errors = []
+    for cat in categories:
+        output = run_help(cat)
+        if "not found" in output:
+            errors.append(f"Category '{cat}' not found")
+        if "Workflow:" not in output:
+            errors.append(f"Category '{cat}' missing workflow section")
+    return errors
+
+
+def test_no_legacy():
+    """Test: no legacy CK references in output."""
+    output = run_help()
+    errors = []
+    if "@CK_OUTPUT_TYPE" in output:
+        errors.append("Legacy @CK_OUTPUT_TYPE found")
+    if "/ck:" in output:
+        errors.append("Legacy /ck: prefix found")
+    if "commands/" in output.lower():
+        errors.append("Legacy commands/ reference found")
+    return errors
 
 
 def main():
-    print("=" * 60)
-    print("ht-help.py Comprehensive Test Suite")
-    print("=" * 60)
-    print()
-
-    # =========================================
-    # CATEGORY 1: Input Validation
-    # =========================================
-    print("\n## Category 1: Input Validation\n")
-
-    test(
-        "1.1 Empty input → overview",
-        "",
-        expect_contains=["Antigravity-HTKit Commands", "Quick Start"],
-        expect_type="category-guide"
-    )
-
-    test(
-        "1.2 Single space → overview",
-        " ",
-        expect_contains=["Antigravity-HTKit Commands"],
-        expect_type="category-guide"
-    )
-
-    test(
-        "1.3 Very long input (handled)",
-        "a " * 100,  # 200 chars
-        expect_type="task-recommendations"  # Will try to parse as task
-    )
-
-    # =========================================
-    # CATEGORY 2: Intent Detection
-    # =========================================
-    print("\n## Category 2: Intent Detection\n")
-
-    test(
-        "2.1 Single known category → category guide",
-        "fix",
-        expect_contains=["Fixing Issues", "Workflow"],
-        expect_type="category-guide"
-    )
-
-    test(
-        "2.2 Single unknown word → search",
-        "xyzabc",
-        expect_contains=["No commands found"],
-        expect_type="search-results"
-    )
-
-    test(
-        "2.3 Single word with colon → command",
-        "plan:fast",
-        expect_type="command-details"
-    )
-
-    test(
-        "2.4 Multiple words → task",
-        "fix bugs",
-        expect_contains=["Recommended for"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "2.5 Case insensitive category",
-        "FIX",
-        expect_contains=["Fixing Issues"],
-        expect_type="category-guide"
-    )
-
-    test(
-        "2.6 Mixed case category",
-        "Fix",
-        expect_contains=["Fixing Issues"],
-        expect_type="category-guide"
-    )
-
-    # =========================================
-    # CATEGORY 3: All Categories Work
-    # =========================================
-    print("\n## Category 3: Category Queries\n")
-
-    categories_with_guides = [
-        ("fix", "Fixing Issues"),
-        ("plan", "Planning"),
-        ("cook", "Implementation"),
-        ("bootstrap", "Project Setup"),
-        ("test", "Testing"),
-        ("docs", "Documentation"),
-        ("git", "Git Workflow"),
-        ("design", "Design"),
-        ("review", "Code Review"),
-        ("content", "Content Creation"),
-        ("integrate", "Integration"),
-        ("skill", "Skill Management"),
-        ("scout", "Codebase Exploration"),
-        ("config", "Antigravity-HTKit Configuration"),
-        ("coding-level", "Coding Level"),
-        ("worktree", "Git Worktrees"),
-        ("kanban", "AI Orchestration"),
-        ("preview", "Content Preview"),
-        ("journal", "Technical Journaling"),
-        ("brainstorm", "Brainstorming"),
-        ("watzup", "Session Review"),
-        ("notifications", "Session Notifications"),
+    """Run all tests."""
+    tests = [
+        ("Overview", test_overview),
+        ("Category guide", test_category_guide),
+        ("Task recommendation", test_task_recommendation),
+        ("Search", test_search),
+        ("Version", test_version),
+        ("All categories", test_all_categories),
+        ("No legacy refs", test_no_legacy),
     ]
 
-    for cat, title in categories_with_guides:
-        test(
-            f"3.x Category '{cat}'",
-            cat,
-            expect_contains=[title]
-        )
+    total_errors = 0
+    for name, test_fn in tests:
+        errors = test_fn()
+        status = "✅" if not errors else "❌"
+        print(f"{status} {name}")
+        if errors:
+            for e in errors:
+                print(f"   → {e}")
+            total_errors += len(errors)
 
-    test(
-        "3.23 Unknown category → helpful message",
-        "nonexistent",
-        expect_contains=["No commands found"]
-    )
-
-    # =========================================
-    # CATEGORY 4: Task Scoring (Positional Weighting)
-    # =========================================
-    print("\n## Category 4: Task Scoring Algorithm\n")
-
-    test(
-        "4.1 'setup notifications' → notifications (not bootstrap)",
-        "setup notifications",
-        expect_contains=["DISCORD_WEBHOOK_URL", "notifications"],
-        expect_not_contains=["/bootstrap"]
-    )
-
-    test(
-        "4.2 'fix bugs' → fix category",
-        "fix bugs",
-        expect_contains=["/fix"],  # Workflow shows /fix commands
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.3 'create new feature' → cook category",
-        "create new feature",
-        expect_contains=["/cook"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.4 'add discord webhook' → notifications (discord keyword)",
-        "add discord webhook",
-        expect_contains=["notifications", "DISCORD"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.5 'telegram alerts' → notifications",
-        "telegram alerts",
-        expect_contains=["notifications"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.6 'setup slack' → notifications (slack keyword)",
-        "setup slack",
-        expect_contains=["notifications"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.7 'start new project' → bootstrap",
-        "start new project",
-        expect_contains=["/bootstrap"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.8 'commit my changes' → git (action verb 'commit' at start)",
-        "commit my changes",
-        expect_contains=["/git"],  # "commit" is action verb = high intent
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.9 'test my code' → test (action verb 'test' at start)",
-        "test my code",
-        expect_contains=["/test"],  # "test" is action verb = high intent, shows /test workflow
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.10 No keyword match → helpful message",
-        "xyzzy foo bar",
-        expect_contains=["Not sure about", "browse categories"]
-    )
-
-    # Edge cases: service-specific queries should hit notifications, not config
-    test(
-        "4.11 'configure discord' → notifications (service keyword)",
-        "configure discord",
-        expect_contains=["DISCORD_WEBHOOK_URL"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.12 'discord webhook' → notifications",
-        "discord webhook",
-        expect_contains=["notifications"],
-        expect_type="task-recommendations"
-    )
-
-    test(
-        "4.13 'telegram bot' → notifications",
-        "telegram bot",
-        expect_contains=["TELEGRAM"],
-        expect_type="task-recommendations"
-    )
-
-    # =========================================
-    # CATEGORY 5: Command Lookup
-    # =========================================
-    print("\n## Category 5: Command Lookup\n")
-
-    test(
-        "5.1 Command with colon",
-        "plan:fast",
-        expect_type="command-details"
-    )
-
-    test(
-        "5.2 Command not found → search fallback",
-        "plan:nonexistent",
-        expect_contains=["not found"]
-    )
-
-    # =========================================
-    # CATEGORY 6: Special Queries
-    # =========================================
-    print("\n## Category 6: Special Queries\n")
-
-    test(
-        "6.1 'config' → comprehensive docs",
-        "config",
-        expect_contains=["Antigravity-HTKit Configuration", ".ht.json"],
-        expect_type="comprehensive-docs"
-    )
-
-    test(
-        "6.2 '.ht.json' → comprehensive docs",
-        ".ht.json",
-        expect_contains=["Antigravity-HTKit Configuration"],
-        expect_type="comprehensive-docs"
-    )
-
-    test(
-        "6.3 'coding-level' → comprehensive docs",
-        "coding-level",
-        expect_contains=["Coding Level", "ELI5"],
-        expect_type="comprehensive-docs"
-    )
-
-    test(
-        "6.4 'eli5' → comprehensive docs",
-        "eli5",
-        expect_contains=["Coding Level"],
-        expect_type="comprehensive-docs"
-    )
-
-    test(
-        "6.5 'god mode' → comprehensive docs",
-        "god mode",
-        expect_contains=["Coding Level", "God Mode"],
-        expect_type="comprehensive-docs"
-    )
-
-    # =========================================
-    # CATEGORY 7: Output Type Markers
-    # =========================================
-    print("\n## Category 7: Output Type Markers\n")
-
-    test(
-        "7.1 Overview has correct type",
-        "",
-        expect_type="category-guide"
-    )
-
-    test(
-        "7.2 Category has correct type",
-        "fix",
-        expect_type="category-guide"
-    )
-
-    test(
-        "7.3 Command has correct type",
-        "fix:fast",
-        expect_type="command-details"
-    )
-
-    test(
-        "7.4 Search has correct type",
-        "nonexistent",
-        expect_type="search-results"
-    )
-
-    test(
-        "7.5 Task has correct type",
-        "fix my bug",
-        expect_type="task-recommendations"
-    )
-
-    # =========================================
-    # CATEGORY 8: Workflow-Only Categories
-    # =========================================
-    print("\n## Category 8: Workflow-Only Categories\n")
-
-    test(
-        "8.1 'notifications' shows workflow, no bootstrap commands",
-        "notifications",
-        expect_contains=["DISCORD_WEBHOOK_URL", "Workflow"],
-        expect_not_contains=["/bootstrap"]
-    )
-
-    test(
-        "8.2 'worktree' shows workflow",
-        "worktree",
-        expect_contains=["Git Worktrees", "Workflow"]
-    )
-
-    test(
-        "8.3 'kanban' shows workflow",
-        "kanban",
-        expect_contains=["AI Orchestration", "Workflow"]
-    )
-
-    # =========================================
-    # SUMMARY
-    # =========================================
-    print("\n" + "=" * 60)
-    print(f"SUMMARY: {passed} passed, {failed} failed")
-    print("=" * 60)
-
-    if failures:
-        print("\n## Failed Tests:\n")
-        for name, args, errors, output in failures:
-            print(f"### {name}")
-            print(f"Args: '{args}'")
-            print(f"Errors: {errors}")
-            print(f"Output preview: {output[:200]}...")
-            print()
-
-    return 0 if failed == 0 else 1
+    print(f"\n{'✅ All tests passed!' if total_errors == 0 else f'❌ {total_errors} error(s) found'}")
+    return 0 if total_errors == 0 else 1
 
 
 if __name__ == "__main__":

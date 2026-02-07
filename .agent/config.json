@@ -1,26 +1,8 @@
 {
-  "codingLevel": 3,
-  "privacyBlock": true,
   "docs": {
     "maxLoc": 800,
     "directory": "docs",
     "namingFormat": "XX-Type-Name-YYYY-MM-DD.md"
   },
-  "locale": {
-    "thinkingLanguage": null,
-    "responseLanguage": "vi"
-  },
-  "project": {
-    "type": "auto",
-    "packageManager": "auto",
-    "framework": "auto"
-  },
-  "gemini": {
-    "model": "gemini-3.0-flash"
-  },
-  "skills": {
-    "research": {
-      "useGemini": true
-    }
-  }
+  "privacyBlock": true
 }

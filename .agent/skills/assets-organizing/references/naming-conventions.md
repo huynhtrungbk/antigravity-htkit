@@ -20,7 +20,7 @@
 ## Date Formats
 
 ### Env Var
-Use `$CK_PLAN_DATE_FORMAT` if set, otherwise default to `YYMMDD-HHmm`.
+Use `$HT_PLAN_DATE_FORMAT` if set, otherwise default to `YYMMDD-HHmm`.
 
 ### Patterns
 | Format | Example | Use Case |

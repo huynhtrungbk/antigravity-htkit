@@ -10,7 +10,7 @@ const fs = require('fs');
 
 const SCRIPT_PATH = path.join(__dirname, 'worktree.cjs');
 const STANDALONE_DIR = path.dirname(path.dirname(__dirname)); // worktree dir
-const MONOREPO_DIR = '/home/huynhtrungbk/antigravityhtkit';
+const MONOREPO_DIR = path.dirname(path.dirname(__dirname)); // dynamic resolution
 
 let passed = 0;
 let failed = 0;
@@ -709,7 +709,7 @@ test('scenario: user fixes bug in submodule', () => {
   assert(json.wouldCreate.branch.startsWith('fix/'), 'Should have fix prefix');
   // Worktree should go to superproject
   assert(json.wouldCreate.worktreeRootSource.includes('superproject') ||
-         json.wouldCreate.worktreeRootSource.includes('monorepo'),
+    json.wouldCreate.worktreeRootSource.includes('monorepo'),
     'Should use superproject worktrees dir');
 });
 

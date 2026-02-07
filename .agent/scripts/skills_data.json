@@ -1,0 +1,474 @@
+[
+  {
+    "name": "ab-test-setup",
+    "path": "ab-test-setup/SKILL.md",
+    "description": "You are an expert in experimentation and A/B testing. Your goal is to help design tests that produce statistically valid, actionable results.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "ads-management",
+    "path": "ads-management/SKILL.md",
+    "description": "Paid advertising campaign creation, optimization, and performance tracking.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "affiliate-marketing",
+    "path": "affiliate-marketing/SKILL.md",
+    "description": "Build and scale SaaS affiliate programs that drive 20-50% of customer acquisition at 30-50% lower CAC.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "ai-artist",
+    "path": "ai-artist/SKILL.md",
+    "description": "Generate images using 129 curated prompts from awesome-nano-banana-pro-prompts collection.",
+    "category": "ai-ml",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "ai-multimodal",
+    "path": "ai-multimodal/SKILL.md",
+    "description": "Process audio, images, videos, documents, and generate images/videos using Google Gemini's multimodal API.",
+    "category": "ai-ml",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "analytics",
+    "path": "analytics/SKILL.md",
+    "description": "Performance measurement, reporting, and data-driven optimization.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "assets-organizing",
+    "path": "assets-organizing/SKILL.md",
+    "description": "Standardize asset output locations, naming conventions, and directory structures for all marketing outputs.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "backend-development",
+    "path": "backend-development/SKILL.md",
+    "description": "Production-ready backend development with modern technologies, best practices, and proven patterns.",
+    "category": "backend",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "better-auth",
+    "path": "better-auth/SKILL.md",
+    "description": "Better Auth is comprehensive, framework-agnostic authentication/authorization framework for TypeScript with built-in email/password, social OAuth, and powerful plugin ecosystem for advanced features.",
+    "category": "backend",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "brand-guidelines",
+    "path": "brand-guidelines/SKILL.md",
+    "description": "Brand identity, voice, messaging, asset management, and consistency frameworks.",
+    "category": "frontend",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "campaign-management",
+    "path": "campaign-management/SKILL.md",
+    "description": "End-to-end campaign planning, execution, and optimization frameworks.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "chrome-devtools",
+    "path": "chrome-devtools/SKILL.md",
+    "description": "Browser automation via Puppeteer scripts with persistent sessions. All scripts output JSON.",
+    "category": "multimedia",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "code-review",
+    "path": "code-review/SKILL.md",
+    "description": "Guide proper code review practices emphasizing technical rigor, evidence-based claims, and verification over performative responses.",
+    "category": "utilities",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "content-hub",
+    "path": "content-hub/SKILL.md",
+    "description": "Visual asset gallery for Antigravity-HTKit Marketing.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": false
+  },
+  {
+    "name": "content-marketing",
+    "path": "content-marketing/SKILL.md",
+    "description": "Strategic content planning, editorial workflows, and content optimization frameworks.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "context-engineering",
+    "path": "context-engineering/SKILL.md",
+    "description": "Context engineering curates the smallest high-signal token set for LLM tasks. The goal: maximize reasoning quality while minimizing token usage.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "copywriting",
+    "path": "copywriting/SKILL.md",
+    "description": "Formulas, templates, patterns, and writing styles for high-converting copy.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "creativity",
+    "path": "creativity/SKILL.md",
+    "description": "Comprehensive creative direction guide for digital marketing campaigns. Contains 55 styles, 18 platforms, 12 voiceover types, 17 music genres, and 30 campaign category recommendations. Searchable data",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "databases",
+    "path": "databases/SKILL.md",
+    "description": "Unified guide for working with MongoDB (document-oriented) and PostgreSQL (relational) databases. Choose the right database for your use case and master both systems.",
+    "category": "database",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "debugging",
+    "path": "debugging/SKILL.md",
+    "description": "Comprehensive debugging framework combining systematic investigation, root cause tracing, defense-in-depth validation, and verification protocols.",
+    "category": "utilities",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "design-system",
+    "path": "design-system/SKILL.md",
+    "description": "Token architecture, component specifications, systematic design, slide generation.",
+    "category": "frontend",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "devops",
+    "path": "devops/SKILL.md",
+    "description": "Deploy and manage cloud infrastructure across Cloudflare, Docker, Google Cloud, and Kubernetes.",
+    "category": "infrastructure",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "docs-seeker",
+    "path": "docs-seeker/SKILL.md",
+    "description": "**Script-first** documentation discovery using llms.txt standard.",
+    "category": "dev-tools",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "email-marketing",
+    "path": "email-marketing/SKILL.md",
+    "description": "Email campaign creation, automation workflows, and performance optimization.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "frontend-design",
+    "path": "frontend-design/SKILL.md",
+    "description": "Create distinctive, production-grade frontend interfaces. Implement real working code with exceptional aesthetic attention.",
+    "category": "frontend",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "frontend-development",
+    "path": "frontend-development/SKILL.md",
+    "description": "Comprehensive guide for modern React development, emphasizing Suspense-based data fetching, lazy loading, proper file organization, and performance optimization.",
+    "category": "frontend",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "git",
+    "path": "git/SKILL.md",
+    "description": "Execute git workflows via `git-manager` subagent to isolate verbose output.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "google-adk-python",
+    "path": "google-adk-python/SKILL.md",
+    "description": "Expert guide for Google's Agent Development Kit (ADK) Python — open-source, code-first toolkit for building, evaluating, and deploying AI agents. Optimized for Gemini, model-agnostic by design.",
+    "category": "ai-ml",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "launch-strategy",
+    "path": "launch-strategy/SKILL.md",
+    "description": "You are an expert in SaaS product launches and feature announcements. Your goal is to help users plan launches that build momentum, capture attention, and convert interest into users.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "logo-design",
+    "path": "logo-design/SKILL.md",
+    "description": "Comprehensive logo design system with 55+ styles, 30 color palettes, 25 industry guides. Search design guidelines and generate logos using Gemini Nano Banana models.",
+    "category": "frontend",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "marketing-ideas",
+    "path": "marketing-ideas/SKILL.md",
+    "description": "You are a marketing strategist with a library of 140 proven marketing ideas. Your goal is to help users find the right marketing strategies for their specific situation, stage, and resources.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "marketing-planning",
+    "path": "marketing-planning/SKILL.md",
+    "description": "Create detailed marketing plans through market research, competitive analysis, strategy design, and actionable campaign documentation.",
+    "category": "utilities",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "marketing-psychology",
+    "path": "marketing-psychology/SKILL.md",
+    "description": "You are an expert in applying psychological principles and mental models to marketing. Your goal is to help users understand why people buy, how to influence behavior ethically, and how to make better",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "marketing-research",
+    "path": "marketing-research/SKILL.md",
+    "description": "Focus on actionable marketing intelligence: market trends, competitor analysis, audience insights, and campaign benchmarks.",
+    "category": "utilities",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "mcp-builder",
+    "path": "mcp-builder/SKILL.md",
+    "description": "To create high-quality MCP (Model Context Protocol) servers that enable LLMs to effectively interact with external services, use this skill. An MCP server provides tools that allow LLMs to access exte",
+    "category": "frontend",
+    "has_scripts": true,
+    "has_references": false
+  },
+  {
+    "name": "mcp-management",
+    "path": "mcp-management/SKILL.md",
+    "description": "Skill for managing and interacting with Model Context Protocol (MCP) servers.",
+    "category": "dev-tools",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "media-processing",
+    "path": "media-processing/SKILL.md",
+    "description": "Process video, audio, and images using FFmpeg, ImageMagick, and RMBG CLI tools.",
+    "category": "multimedia",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "mermaidjs-v11",
+    "path": "mermaidjs-v11/SKILL.md",
+    "description": "Create text-based diagrams using Mermaid.js v11 declarative syntax. Convert code to SVG/PNG/PDF via CLI or render in browsers/markdown files.",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "paid-ads",
+    "path": "paid-ads/SKILL.md",
+    "description": "You are an expert performance marketer with direct access to ad platform accounts. Your goal is to help create, optimize, and scale paid advertising campaigns that drive efficient customer acquisition",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "payment-integration",
+    "path": "payment-integration/SKILL.md",
+    "description": "Production-proven payment processing with SePay (Vietnamese banks), Polar (global SaaS), Stripe (global infrastructure), Paddle (MoR subscriptions), and Creem.io (MoR + licensing).",
+    "category": "backend",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "plans-kanban",
+    "path": "plans-kanban/SKILL.md",
+    "description": "Plans dashboard server with progress tracking and timeline visualization.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": false
+  },
+  {
+    "name": "pricing-strategy",
+    "path": "pricing-strategy/SKILL.md",
+    "description": "You are an expert in SaaS pricing and monetization strategy with access to pricing research data and analysis tools. Your goal is to help design pricing that captures value, drives growth, and aligns ",
+    "category": "other",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "referral-program-building",
+    "path": "referral-program-building/SKILL.md",
+    "description": "Build viral referral programs that drive 2-3x higher conversion rates with 37% better retention.",
+    "category": "frontend",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "remotion",
+    "path": "remotion/SKILL.md",
+    "description": "Use this skills whenever you are dealing with Remotion code to obtain the domain-specific knowledge.",
+    "category": "frameworks",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "repomix",
+    "path": "repomix/SKILL.md",
+    "description": "Repomix packs entire repositories into single, AI-friendly files. Perfect for feeding codebases to LLMs like the agent, ChatGPT, and Gemini.",
+    "category": "dev-tools",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "research",
+    "path": "research/SKILL.md",
+    "description": "Always honoring **YAGNI**, **KISS**, and **DRY** principles.",
+    "category": "utilities",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "seo-optimization",
+    "path": "seo-optimization/SKILL.md",
+    "description": "Technical SEO, keyword research (ReviewWeb.site API), Google Search Console API, and programmatic SEO.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "sequential-thinking",
+    "path": "sequential-thinking/SKILL.md",
+    "description": "Structured problem-solving via manageable, reflective thought sequences with dynamic adjustment.",
+    "category": "utilities",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "skill-creator",
+    "path": "skill-creator/SKILL.md",
+    "description": "This skill provides guidance for creating effective skills.",
+    "category": "dev-tools",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "slides-design",
+    "path": "slides-design/SKILL.md",
+    "description": "Create persuasive HTML slide decks using design tokens, Chart.js, and a contextual decision system.",
+    "category": "frontend",
+    "has_scripts": false,
+    "has_references": true
+  },
+  {
+    "name": "social-media",
+    "path": "social-media/SKILL.md",
+    "description": "Content creation, API integrations, and scheduling for X, Facebook, Threads, LinkedIn, YouTube, TikTok.",
+    "category": "multimedia",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "threejs",
+    "path": "threejs/SKILL.md",
+    "description": "Build high-performance 3D web applications using Three.js. Contains 556 searchable examples across 13 categories, 60 API classes, and 20 use-case templates.",
+    "category": "frontend",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "ui-styling",
+    "path": "ui-styling/SKILL.md",
+    "description": "Comprehensive skill for creating beautiful, accessible user interfaces combining shadcn/ui components, Tailwind CSS utility styling, and canvas-based visual design systems.",
+    "category": "frontend",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "ui-ux",
+    "path": "ui-ux/SKILL.md",
+    "description": "Comprehensive design guide for web and mobile applications. Contains 50+ styles, 97 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 9 technology stacks. Searchable databa",
+    "category": "frontend",
+    "has_scripts": true,
+    "has_references": false
+  },
+  {
+    "name": "video-production",
+    "path": "video-production/SKILL.md",
+    "description": "Video marketing strategy, scripting, AI video generation, and platform optimization.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "web-design-guidelines",
+    "path": "web-design-guidelines/SKILL.md",
+    "description": "Review files for compliance with Web Interface Guidelines.",
+    "category": "frontend",
+    "has_scripts": false,
+    "has_references": false
+  },
+  {
+    "name": "web-frameworks",
+    "path": "web-frameworks/SKILL.md",
+    "description": "Comprehensive guide for building modern full-stack web applications using Next.js, Turborepo, and RemixIcon.",
+    "category": "frameworks",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "web-testing",
+    "path": "web-testing/SKILL.md",
+    "description": "Comprehensive web testing: unit, integration, E2E, load, security, visual regression, accessibility.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  },
+  {
+    "name": "youtube-handling",
+    "path": "youtube-handling/SKILL.md",
+    "description": "Process YouTube videos: download, caption, summarize, screenshot, analyze comments.",
+    "category": "other",
+    "has_scripts": true,
+    "has_references": true
+  }
+]

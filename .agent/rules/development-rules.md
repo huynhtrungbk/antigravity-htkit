@@ -70,7 +70,7 @@ Analysis → Plan → USER APPROVAL → Execute all phases → Report
 
 | Key | Value |
 |-----|-------|
-| **Kit** | Antigravity-HTKit v1.0.0 |
+| **Kit** | Antigravity-HTKit v1.1.0 |
 | **Admin** | [@huynhtrungbk](https://github.com/huynhtrungbk) |
 | **Timezone** | Asia/Ho_Chi_Minh (GMT+7) |
 | **Language** | Vietnamese (vi) preferred |
