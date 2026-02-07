@@ -1,0 +1,24 @@
+{
+    "kit": {
+        "name": "Antigravity-HTKit",
+        "version": "1.0.0",
+        "author": "huynhtrungbk"
+    },
+    "preferences": {
+        "language": "vi",
+        "responseLanguage": "vi",
+        "timezone": "Asia/Ho_Chi_Minh",
+        "dateFormat": "YYYY-MM-DD"
+    },
+    "defaults": {
+        "commitPrefix": "ht",
+        "docNumbering": true,
+        "docFolder": "./docs/",
+        "featuresFolder": "./features/"
+    },
+    "identity": {
+        "admin": "huynhtrungbk",
+        "email": "admin@huynhtrungbk.com",
+        "github": "https://github.com/huynhtrungbk"
+    }
+}
