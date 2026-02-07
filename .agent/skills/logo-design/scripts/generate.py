@@ -11,8 +11,8 @@ Models:
 Usage:
     python generate.py --prompt "tech startup logo minimalist blue"
     python generate.py --prompt "coffee shop vintage badge" --style vintage --output logo.png
-    python generate.py --brand "TechFlow" --industry tech --style minimalist
-    python generate.py --brand "TechFlow" --pro  # Use Nano Banana Pro model
+    python generate.py --brand "SkyNova" --industry tech --style minimalist
+    python generate.py --brand "SkyNova" --pro  # Use Nano Banana Pro model
 
 Batch mode (generates multiple variants):
     python generate.py --brand "Unikorn" --batch 9 --output-dir ./logos --pro

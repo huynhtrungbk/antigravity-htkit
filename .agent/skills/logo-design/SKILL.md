@@ -48,7 +48,7 @@ python3 ~/.agent/skills/logo-design/scripts/search.py "healthcare medical" --dom
 **ALWAYS** generate output logo images with white background.
 
 ```bash
-python3 ~/.agent/skills/logo-design/scripts/generate.py --brand "TechFlow" --style minimalist --industry tech
+python3 ~/.agent/skills/logo-design/scripts/generate.py --brand "SkyNova" --style minimalist --industry tech
 python3 ~/.agent/skills/logo-design/scripts/generate.py --prompt "coffee shop vintage badge" --style vintage
 ```
 
@@ -87,19 +87,19 @@ Options: `--style` (minimalist, vintage, luxury, etc.), `--industry` (tech, heal
 
 ## Workflow Example
 
-**User:** "Create a logo for a sustainable coffee brand called GreenBean"
+**User:** "Create a logo for a Vietnamese artisan coffee brand called Mộc Roasters"
 
 1. Generate design brief:
 ```bash
-python3 ~/.agent/skills/logo-design/scripts/search.py "coffee organic eco sustainable" --design-brief -p "GreenBean"
+python3 ~/.agent/skills/logo-design/scripts/search.py "vietnamese coffee artisan roasters" --design-brief -p "Mộc Roasters"
 ```
 
 2. Generate logo variations:
 **ALWAYS** generate output logo images with white background.
 
 ```bash
-python3 ~/.agent/skills/logo-design/scripts/generate.py --brand "GreenBean" --style vintage --industry eco
-python3 ~/.agent/skills/logo-design/scripts/generate.py --brand "GreenBean" --style organic --industry food
+python3 ~/.agent/skills/logo-design/scripts/generate.py --brand "Mộc Roasters" --style vintage --industry eco
+python3 ~/.agent/skills/logo-design/scripts/generate.py --brand "Mộc Roasters" --style organic --industry food
 ```
 
 1. **[FINAL STEP - REQUIRED]** Ask user about HTML preview:
