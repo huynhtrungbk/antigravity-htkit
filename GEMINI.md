@@ -6,7 +6,7 @@ This file provides guidance to Antigravity when working with code in this reposi
 
 ## Overview
 
-**Antigravity-HTKit** v1.1.1 — Full AI development & marketing toolkit with 59 skills. By [@huynhtrungbk](https://github.com/huynhtrungbk).
+**Antigravity-HTKit** v1.1.1 — Full AI development & marketing toolkit with 60 skills. By [@huynhtrungbk](https://github.com/huynhtrungbk).
 
 ---
 
@@ -19,12 +19,12 @@ This file provides guidance to Antigravity when working with code in this reposi
 
 ---
 
-## Skills (59)
+## Skills (60)
 
 | Category | Skills |
 |----------|--------|
 | **Design** | `ui-ux` (BM25 search, 50 styles, 21 palettes, 9 stacks), `ui-styling` (shadcn/Tailwind), `design-system` (token embed + slides), `frontend-design` (design-to-code), `web-design-guidelines` (UI audit), `threejs` (examples DB), `ai-artist` (image gen), `creativity` (creative briefs), `logo-design` (AI logo gen), `slides-design` (Chart.js presentations) |
-| **Engineering** | `backend-development` (Node/Python/Go APIs), `frontend-development` (React/TypeScript), `databases` (backup/migrate/perf), `web-frameworks` (Next.js init), `web-testing` (Playwright), `debugging` (test polluter), `code-review` (scout-based), `git` (conventional commits), `better-auth` (OAuth/2FA/passkeys), `mcp-builder` (FastMCP servers), `google-adk-python` (AI agents), `remotion` (React video), `repomix` (repo packing), `research` (tech evaluation), `skill-creator` (create skills), `mermaidjs-v11` (diagrams) |
+| **Engineering** | `backend-development` (Node/Python/Go APIs), `frontend-development` (React/TypeScript), `databases` (backup/migrate/perf), `web-frameworks` (Next.js init), `web-testing` (Playwright), `debugging` (test polluter), `code-review` (scout-based), `feature-analysis` (15-perspective audits), `git` (conventional commits), `better-auth` (OAuth/2FA/passkeys), `mcp-builder` (FastMCP servers), `google-adk-python` (AI agents), `remotion` (React video), `repomix` (repo packing), `research` (tech evaluation), `skill-creator` (create skills), `mermaidjs-v11` (diagrams) |
 | **Payment** | `payment-integration` (SePay/Polar/Stripe/Paddle/Creem.io, multi-provider) |
 | **AI/Media** | `ai-multimodal` (Gemini vision/image/video), `media-processing` (FFmpeg/ImageMagick/RMBG), `youtube-handling` (VidCap API), `copywriting` (conversion copy), `video-production` (video marketing) |
 | **DevOps** | `devops` (Cloudflare/Docker/K8s/GCP), `chrome-devtools` (Puppeteer), `assets-organizing` (asset management) |
